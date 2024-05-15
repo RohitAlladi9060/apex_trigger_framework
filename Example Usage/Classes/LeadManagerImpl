@@ -1,0 +1,18 @@
+/**
+ * @author Rohit Alladi
+ * @date Feb 2019
+ * @group Classes
+ * @group-content ../ApexDocContent/Classes.html
+ * @description Implemenation class for LeadManager
+ **/
+public class LeadManagerImpl extends LeadManager {
+
+    /**
+     * @description Takes a Map of Lead id and lead record and updates the lead.
+     * @param Map of Lead id to Lead record
+     * @return void
+     **/
+    public void updateLeadRecordsId(Map<Id,Lead> leadRecords){
+        update leadRecords.values();
+    }
+}

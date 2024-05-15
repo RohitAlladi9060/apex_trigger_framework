@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsActive__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>If selected true, denotes the activation of the object specific trigger.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Check the box if you want to activate the trigger.</inlineHelpText>
+    <label>IsActive</label>
+    <type>Checkbox</type>
+</CustomField>

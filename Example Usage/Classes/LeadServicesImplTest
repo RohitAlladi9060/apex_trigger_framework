@@ -1,0 +1,30 @@
+/**
+ * @author Rohit Alladi
+ * @date Feb 2019
+ * @group Test Classes
+ * @group-content ../ApexDocContent/TestClasses.html
+ * @description Test class for LeadServiceImpl
+ **/
+
+@IsTest
+private class LeadServiceImplTest {
+
+    /**
+     * Method Tested: generateEmailForLeads
+     * | Scenario: Pass a Map of Lead id and lead record.
+     * | Expected Result: generates and email for each lead record.
+     **/
+    static testMethod void  generateEmailForLeads_PassMapOfLeadIdAndLeadRecord_EmailGeneratedForEachLead() {
+
+        List<Lead> leadRecords = new List<Lead>();
+        leadRecords = TestUtility.createLeads(1);
+        insert leadRecords;
+        LeadService services = new LeadServiceImpl();
+        //Have a start test and stop test just for the method ur invoking.
+        Test.startTest();
+        Set<String> result = services.generateEmailForLeads(leadRecords);
+        Test.stopTest();
+
+        System.assertEquals(1, Limits.getEmailInvocations(),'Expected One Email to be invoked.');
+    }
+}

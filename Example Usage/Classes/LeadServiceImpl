@@ -1,0 +1,18 @@
+/**
+ * @author Rohit Alladi
+ * @date Feb 2019
+ * @group Classes
+ * @group-content ../ApexDocContent/Classes.html
+ * @description Implementation class for LeadService.
+ **/
+public class LeadService implements LeadServiceImpl{
+
+    /**
+     * @description Takes a Map of Lead id and lead record and generates an email for each lead.
+     * @param Map of Lead id to Lead record
+     * @return void
+     **/
+    public void generateEmailForLeads(Map<Id,Lead> leadRecords){
+        //Code here to send emails.
+    }
+}

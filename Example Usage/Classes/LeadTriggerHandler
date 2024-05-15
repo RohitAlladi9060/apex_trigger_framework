@@ -1,0 +1,59 @@
+/**
+ * @author Rohit Alladi
+ * @date Feb 2019
+ * @group Classes
+ * @group-content ../ApexDocContent/Classes.html
+ * @description Handler class for Lead object
+ **/
+public class LeadTriggerHandler extends TriggerHandlerBase {
+
+    /* Static */
+    @testVisible
+    private static Boolean isExecuted = true;
+
+    /* Managers */
+    public LeadManager leadmanager {get;set;}
+
+    /* Services */
+    public LeadServices leadservices{get;set;}
+
+    /* Insert Contexts */
+
+    public override void beforeInsert(List<sObject> newSObjects) {
+        if (TriggerRegulator.beforeInsertHasRun(TriggerRegulator.LEAD, 1)) {
+            return;
+        }
+    }
+
+    public override void afterInsert(Map<Id, sObject> newSObjects){
+      if (TriggerRegulator.afterInsertHasRun(TriggerRegulator.LEAD, 1)) {
+          return;
+      }
+      Map<Id,Lead> newLeadRecords = (newSObjects)Map<Id,Lead>();
+      leadservices.generateEmailForLeads();
+    }
+
+    /* Update Contexts */
+
+    public override void beforeUpdate( Map<Id,sObject> newMap, Map<Id,sObject> oldMap){
+        if (TriggerRegulator.beforeUpdateHasRun(TriggerRegulator.LEAD, 1)) {
+            return;
+        }
+    }
+
+    public override void afterUpdate(Map<Id,SObject> newMap, Map<Id,SObject> oldMap) {
+        if (TriggerRegulator.afterUpdateHasRun(TriggerRegulator.LEAD, 1)) {
+            return;
+        }
+    }
+
+    /* Delete Contexts */
+
+    public override void beforeDelete(Map<Id, sObject> oldSObjects) {
+    }
+
+    public override void afterDelete(Map<Id,SObject> oldMap) {
+        if (TriggerRegulator.afterDeleteHasRun(TriggerRegulator.LEAD, 1)) {
+            return;
+        }
+    }

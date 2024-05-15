@@ -1,0 +1,23 @@
+/**
+ * @author Rohit Alladi
+ * @date Feb 2019
+ * @group Test Classes
+ * @group-content ../ApexDocContent/TestClasses.html
+ * @description Utility Test Class
+ **/
+
+@IsTest
+private class TestUtility {
+
+    public static List<Lead> createLeads(Integer count){
+        List<Lead> leadRecords = new List<Lead>();
+        for(integer i=0; i< count; i++){
+            Lead leadInstance = new Lead();
+            leadInstance.Company = 'JohnMiller';
+            leadInstance.LastName = 'Mike' ;
+            leadInstance.Status = 'Open';
+            leadRecords.add(leadInstance);
+        }
+        return leadRecords;
+    }
+}

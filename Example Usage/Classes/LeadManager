@@ -1,0 +1,16 @@
+/**
+ * @author Rohit Alladi
+ * @date Feb 2019
+ * @group Classes
+ * @group-content ../ApexDocContent/Classes.html
+ * @description Manager class for Lead Object
+ **/
+public class LeadManager {
+
+    /**
+     * @description Takes a Map of Lead id and lead record and updates the lead.
+     * @param Map of Lead id to Lead record
+     * @return void
+     **/
+    void updateLeadRecordsId(Map<Id,Lead> leadRecords);
+}
